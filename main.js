@@ -127,8 +127,8 @@ class Star {
         * Easter Egg #1 ^.^
         * uncomment the snippet below to make 'em wiggle
         */
-        // let movementFuzz = Math.sin(deltaTime) * randRange(-50, 50);
-        // this.y -= movementFuzz;
+        let movementFuzz = Math.sin(deltaTime) * randRange(-50, 50);
+        this.y -= movementFuzz;
         // move forward, obvi
         this.z -= (defaultSpeed * zSpeed * deltaTime);
         // and sideways
@@ -202,15 +202,15 @@ class Star {
         * Easter Egg #2 ^.^
         * uncomment the snippet below to add little tracer lines that follow the mouse/touch
         */
-        // if (Math.min(width, height)/2 > distance([mouseX, mouseY], [sx, sy]) && this.z < depth/2) {
-        //   context.beginPath();
-        //   context.moveTo(sx, sy);
-        //   let [mX, mY] = limitToCircle(mouseX, mouseY, sx, sy, 50);
-        //   context.lineTo(mX, mY);
-        //   context.lineWidth = radius;
-        //   context.strokeStyle = this.color.replace(')', `, ${mapRange(this.z, 0, depth, 0.1, 0.6)})`);
-        //   context.stroke();
-        // }
+        //  if (Math.min(width, height)/2 > distance([mouseX, mouseY], [sx, sy]) && this.z < depth/2) {
+        //    context.beginPath();
+        //    context.moveTo(sx, sy);
+        //    let [mX, mY] = limitToCircle(mouseX, mouseY, sx, sy, 50);
+        //    context.lineTo(mX, mY);
+        //    context.lineWidth = radius;
+        //    context.strokeStyle = this.color.replace(')', `, ${mapRange(this.z, 0, depth, 0.1, 0.6)})`);
+        //    context.stroke();
+        //  }
     }
 }
 const getPointerInput = (callback, element = document, delay = 600) => {
@@ -314,6 +314,7 @@ class StarField {
         this.mouseMoved = false;
         this.mouseMoving = false;
         this.mouseControlAlpha = 0.1;
+        // TODO: change this to false once development is done
         this.showMouseControls = true;
         this.pauseAnimation = false;
         // just the initial render, doesn't start the loop
@@ -473,20 +474,20 @@ function setup() {
         howManyStars = 500;
     let starfield = new StarField(howManyStars, canvas);
     starfield.startRenderLoop();
-    let UIToggleButton = document.getElementById('ui-button');
-    UIToggleButton.addEventListener('click', (e) => {
-        starfield.showMouseControls = !starfield.showMouseControls;
-        if (starfield.showMouseControls) {
-            starfield.mouseControlAlpha = 0.3;
-            UIToggleButton.classList.remove('off');
-        }
-        else {
-            UIToggleButton.classList.add('off');
-        }
-        e.preventDefault();
-    }, true);
+    // let UIToggleButton = document.getElementById('ui-button');
+    // UIToggleButton.addEventListener('click', (e) => {
+    //     starfield.showMouseControls = !starfield.showMouseControls;
+    //     if (starfield.showMouseControls) {
+    //         starfield.mouseControlAlpha = 0.3;
+    //         UIToggleButton.classList.remove('off');
+    //     }
+    //     else {
+    //         UIToggleButton.classList.add('off');
+    //     }
+    //     e.preventDefault();
+    // }, true);
 }
-window.onload = setup();
+setup();
 
 
 
