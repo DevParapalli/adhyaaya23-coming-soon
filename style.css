@@ -39,44 +39,12 @@ width: 100%;
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
+    z-index: 1;
   }
 
-  .ui-wrapper { 
-    
-  }
-
-  #ui-button {
+.ui-container { 
+    height:100vh;
+    width:100vw;
     position: fixed;
-    left: 50px;
-    bottom: 50px;
-    background: transparent;
-    color: rgba(255, 255, 255, 0.6);
-    padding: 5px 10px;
-    border: solid 2px;
-    border-radius: 6px;
-    outline: none;
-    opacity: 1;
-    transition: transform 0.1s cubic-bezier(0.09, 0.95, 0.14, 1.25), opacity 0.1s cubic-bezier(0.09, 0.95, 0.14, 1.25);
-  }
-  #ui-button:before {
-    content: attr(data-on);
-  }
-  #ui-button.off {
-    opacity: 0.3;
-    transform: translate(-2px, 2px);
-  }
-  #ui-button.off:before {
-    content: attr(data-off);
-  }
-  #ui-button:hover {
-    color: rgba(225, 205, 255, 0.6);
-  }
-  
-  button {
-    font-size: 1em;
-  }
-  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
-    button {
-      font-size: 2em;
-    }
-  }
+    z-index: 100;
+}

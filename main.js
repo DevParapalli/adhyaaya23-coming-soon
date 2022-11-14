@@ -376,34 +376,34 @@ class StarField {
         this.context.clearRect(-size / 2, -size / 2, size, size);
     }
     drawMouseControl() {
-        let context = this.context;
-        let [width, height] = this.screen;
-        let ellipseX = 0, ellipseY = height * 0.25;
-        let ellipseW = 50, ellipseH = 21;
-        ellipseH *= mapRange(this.mouseY, -height / 2 + ellipseY, height / 2 + ellipseY, 0.8, 1.2);
-        let pointIsInEllipse = isInEllipse(this.mouseX, this.mouseY, ellipseX, ellipseY, ellipseW, ellipseH);
-        if (pointIsInEllipse) {
-            this.xSpeed = 0;
-            this.zSpeed = 0;
-        }
-        let xSpin = this.mouseX / width;
-        // ellipse
-        context.beginPath();
-        context.ellipse(ellipseX, ellipseY, ellipseW, ellipseH, xSpin, 0, 2 * Math.PI);
-        context.strokeStyle = `rgba(255, 255, 255, ${this.mouseControlAlpha})`;
-        context.lineWidth = 2;
-        context.stroke();
-        let scaleFactor = 1;
-        if (-this.mouseY > 0) {
-            scaleFactor = mapRange(Math.abs(this.mouseX / width), 0, 1, 2, 0);
-        }
-        let lineDist = distance([ellipseX, ellipseY], [this.mouseX, this.mouseY * scaleFactor]);
-        let [limitedMouseX, limitedMouseY] = limitToCircle(this.mouseX, this.mouseY, ellipseX, ellipseY, lineDist / 2);
-        // input-tracking line
-        context.beginPath();
-        context.moveTo(ellipseX, ellipseY);
-        context.lineTo(limitedMouseX, limitedMouseY);
-        context.stroke();
+        // let context = this.context;
+        // let [width, height] = this.screen;
+        // let ellipseX = 0, ellipseY = height * 0.25;
+        // let ellipseW = 50, ellipseH = 21;
+        // ellipseH *= mapRange(this.mouseY, -height / 2 + ellipseY, height / 2 + ellipseY, 0.8, 1.2);
+        // let pointIsInEllipse = isInEllipse(this.mouseX, this.mouseY, ellipseX, ellipseY, ellipseW, ellipseH);
+        // if (pointIsInEllipse) {
+        //     this.xSpeed = 0;
+        //     this.zSpeed = 0;
+        // }
+        // let xSpin = this.mouseX / width;
+        // // ellipse
+        // context.beginPath();
+        // context.ellipse(ellipseX, ellipseY, ellipseW, ellipseH, xSpin, 0, 2 * Math.PI);
+        // context.strokeStyle = `rgba(255, 255, 255, ${this.mouseControlAlpha})`;
+        // context.lineWidth = 2;
+        // context.stroke();
+        // let scaleFactor = 1;
+        // if (-this.mouseY > 0) {
+        //     scaleFactor = mapRange(Math.abs(this.mouseX / width), 0, 1, 2, 0);
+        // }
+        // let lineDist = distance([ellipseX, ellipseY], [this.mouseX, this.mouseY * scaleFactor]);
+        // let [limitedMouseX, limitedMouseY] = limitToCircle(this.mouseX, this.mouseY, ellipseX, ellipseY, lineDist / 2);
+        // // input-tracking line
+        // context.beginPath();
+        // context.moveTo(ellipseX, ellipseY);
+        // context.lineTo(limitedMouseX, limitedMouseY);
+        // context.stroke();
     }
     render() {
         if (this.showMouseControls) {
