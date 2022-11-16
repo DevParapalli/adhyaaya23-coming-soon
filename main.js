@@ -1,4 +1,5 @@
 import './style.css'
+import 'iconify-icon'
 
 /*
 * Table of Contents:
@@ -474,6 +475,7 @@ function setup() {
         howManyStars = 500;
     let starfield = new StarField(howManyStars, canvas);
     starfield.startRenderLoop();
+    
     // let UIToggleButton = document.getElementById('ui-button');
     // UIToggleButton.addEventListener('click', (e) => {
     //     starfield.showMouseControls = !starfield.showMouseControls;
