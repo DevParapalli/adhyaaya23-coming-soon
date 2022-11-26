@@ -4,11 +4,13 @@ specifiers:
   autoprefixer: ^10.4.13
   iconify-icon: ^1.0.1
   postcss: ^8.4.18
+  space-travel: ^1.0.6
   tailwindcss: ^3.2.1
   vite: ^3.2.0
 
 dependencies:
   iconify-icon: 1.0.1
+  space-travel: 1.0.6
 
 devDependencies:
   autoprefixer: 10.4.13_postcss@8.4.18
@@ -525,6 +527,11 @@ packages:
     resolution: {integrity: sha512-bzfL1YUZsP41gmu/qjrEk0Q6i2ix/cVeAhbCbqH9u3zYutS1cLg00qhrD0M2MVdCcx4Sc0UpP2eBWo9rotpq6g==}
     dev: true
 
+  /modern-normalize/1.1.0:
+    resolution: {integrity: sha512-2lMlY1Yc1+CUy0gw4H95uNN7vjbpoED7NNRSBHE25nWfLBdmMzFCsPshlzbxHz+gYMcBEUN8V4pU16prcdPSgA==}
+    engines: {node: '>=6'}
+    dev: false
+
   /nanoid/3.3.4:
     resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -693,6 +700,14 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /space-travel/1.0.6:
+    resolution: {integrity: sha512-h+rpy2iXOeRejpV7+pfCkURIV0btntBKgkCJZ+r3b8jUYzYJJtbYB/KUQu1V7xgkVCV/KPqGs5dfinx1Cz0HiA==}
+    engines: {node: '>=12'}
+    dependencies:
+      modern-normalize: 1.1.0
+      three: 0.127.0
+    dev: false
+
   /supports-preserve-symlinks-flag/1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
@@ -731,6 +746,10 @@ packages:
     transitivePeerDependencies:
       - ts-node
     dev: true
+
+  /three/0.127.0:
+    resolution: {integrity: sha512-wtgrn+mhYUbobxT7QN3GPdu3SRpSBQvwY6uOzLChWS7QE//f7paDU/+wlzbg+ngeIvBBqjBHSRuywTh8A99Jng==}
+    dev: false
 
   /to-regex-range/5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
