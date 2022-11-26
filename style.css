@@ -54,7 +54,7 @@ font-family: 'Nunito', sans-serif;
     position: fixed;
     z-index: 100;
     /* bottom: 0; */
-    @apply bg-black/40;
+    /* @apply bg-black/40; */
 }
 
 
