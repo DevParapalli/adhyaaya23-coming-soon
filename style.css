@@ -58,7 +58,7 @@ font-family: 'Nunito', sans-serif;
 }
 
 
-.glow-text {
+/* .glow-text {
 animation: neon 3s infinite;
 }
 
@@ -78,4 +78,4 @@ animation: neon 3s infinite;
     0 0 3px var(--shadow-color-light), 0 0 10px var(--shadow-color-light), 0 0 20px var(--shadow-color-light),
     0 0 30px var(--shadow-color), 0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 70px var(--shadow-color), 0 0 100px var(--shadow-color), 0 0 200px var(--shadow-color);
   }
-}
+} */
