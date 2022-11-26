@@ -128,8 +128,8 @@ class Star {
         * Easter Egg #1 ^.^
         * uncomment the snippet below to make 'em wiggle
         */
-        let movementFuzz = Math.sin(deltaTime) * randRange(-50, 50);
-        this.y -= movementFuzz;
+        // let movementFuzz = Math.sin(deltaTime) * randRange(-50, 50);
+        // this.y -= movementFuzz;
         // move forward, obvi
         this.z -= (defaultSpeed * zSpeed * deltaTime);
         // and sideways
@@ -316,7 +316,7 @@ class StarField {
         this.mouseMoving = false;
         this.mouseControlAlpha = 0.1;
         // TODO: change this to false once development is done
-        this.showMouseControls = true;
+        this.showMouseControls = false;
         this.pauseAnimation = false;
         // just the initial render, doesn't start the loop
         this.render();
