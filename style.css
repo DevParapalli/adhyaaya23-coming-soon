@@ -54,15 +54,23 @@ font-family: 'Nunito', sans-serif;
     position: fixed;
     z-index: 100;
     /* bottom: 0; */
-    /* @apply bg-black/40; */
+    @apply bg-black/30;
 }
 
 
-/* .glow-text {
-animation: neon 3s infinite;
+.glow-text {
+/* animation: neon 3s infinite; */
+text-shadow: 0 0 4px #fff,
+0 0 1px #fff,
+0 0 5px #fff,
+0 0 10px #fad567,
+0 0 25px #fad567,
+0 0 30px #fad567,
+0 0 40px #fad567,
+0 0 60px #fad567;
 }
 
-@keyframes neon {
+/* @keyframes neon {
   0% {
     text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
     0 0 3px var(--shadow-color-light), 0 0 10px var(--shadow-color-light), 0 0 20px var(--shadow-color-light),
@@ -78,4 +86,4 @@ animation: neon 3s infinite;
     0 0 3px var(--shadow-color-light), 0 0 10px var(--shadow-color-light), 0 0 20px var(--shadow-color-light),
     0 0 30px var(--shadow-color), 0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 70px var(--shadow-color), 0 0 100px var(--shadow-color), 0 0 200px var(--shadow-color);
   }
-} */
+}  */
