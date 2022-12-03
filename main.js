@@ -5,6 +5,8 @@ import SpaceTravel from "space-travel";
 import {initializeApp} from 'firebase/app';
 import {getFirestore, doc, updateDoc, setDoc} from 'firebase/firestore/lite';
 
+import {website_date, firebaseConfig} from './data.js';
+
 function set_loading() {
     document.getElementById("email-input").disabled = true;
     document.getElementById("email-submit-btn").disabled = true;
@@ -18,16 +20,6 @@ function set_submitted() {
 }
 
 new SpaceTravel({ canvas: document.getElementById("canvas"), throttle: 0 }).start();
-
-const firebaseConfig = {
-    apiKey: "AIzaSyCXfDeNyilLzYtfuqGjnC2rIjtrsVj2yu4",
-    authDomain: "adhyaaya-23-staging.firebaseapp.com",
-    projectId: "adhyaaya-23-staging",
-    storageBucket: "adhyaaya-23-staging.appspot.com",
-    messagingSenderId: "948159077183",
-    appId: "1:948159077183:web:41431f968891a348cc118a",
-    measurementId: "G-JMB4VMS3T3"
-  };
 
 
 
@@ -44,7 +36,42 @@ async function submit_email() {
 }
 
 
+function getTimeRemaining(endtime){
+    const total = Date.parse(endtime) - Date.parse(new Date());
+    const seconds = Math.floor( (total/1000) % 60 );
+    const minutes = Math.floor( (total/1000/60) % 60 );
+    const hours = Math.floor( (total/(1000*60*60)) % 24 );
+    const days = Math.floor( total/(1000*60*60*24) );
+    const weeks = Math.floor( total/(1000*60*60*24*7) );
+    return {
+      total,
+      weeks,
+      days,
+      hours,
+      minutes,
+      seconds
+    };
+  }
 
 
+function initializeClock(endtime){
+    const count_weeks = document.getElementById("weeks");
+    const count_days = document.getElementById("days");
+    const count_hours = document.getElementById("hours");
+
+    function updateClock(){
+        const t = getTimeRemaining(endtime);
+        count_weeks.innerHTML = t.weeks;
+        count_days.innerHTML = t.days - t.weeks*7;
+        count_hours.innerHTML = t.hours;
+        if(t.total<=0){
+            clearInterval(timeinterval);
+        }
+    }
+    updateClock();
+    const timeinterval = setInterval(updateClock,1000);
+}
 
 document.getElementById("email-submit-btn").addEventListener("click", submit_email);
+
+initializeClock(website_date);
