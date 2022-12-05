@@ -22,17 +22,17 @@ function set_submitted() {
 // new SpaceTravel({ canvas: document.getElementById("canvas"), throttle: 0 }).start();
 
 // load video into canvas
-const video = document.getElementById("video");
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
+// const video = document.getElementById("video");
+// const canvas = document.getElementById("canvas");
+// const ctx = canvas.getContext("2d");
 
-video.addEventListener("play", () => {
-    function step() {
-        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-        requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-})
+// video.addEventListener("play", () => {
+//     function step() {
+//         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+//         requestAnimationFrame(step);
+//     }
+//     requestAnimationFrame(step);
+// })
 
 
 async function submit_email() {
