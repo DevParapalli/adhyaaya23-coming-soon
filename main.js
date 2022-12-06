@@ -22,7 +22,6 @@ function set_submitted() {
 // new SpaceTravel({ canvas: document.getElementById("canvas"), throttle: 0 }).start();
 
 // load video into canvas
-// const video = document.getElementById("video");
 // const canvas = document.getElementById("canvas");
 // const ctx = canvas.getContext("2d");
 
@@ -88,4 +87,13 @@ document.getElementById("email-submit-btn").addEventListener("click", submit_ema
 
 initializeClock(website_date);
 
+const video = document.getElementById("video");
+
+video.addEventListener("play", () => {
+    setTimeout(() =>{
+        document.getElementById('csc').classList += " show ";
+    }, 6000)
+})
+
 video.play();
+

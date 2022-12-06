@@ -50,11 +50,13 @@ font-family: 'Nunito', sans-serif;
 
 .ui-container { 
     height:100vh;
+    /* height: 0vh; */
+    /* opacity: 0; */
     width:100vw;
     position: fixed;
     z-index: 100;
     /* bottom: 0; */
-    @apply bg-black/30;
+    @apply bg-black/50 lg:bg-black/30 items-end;
 }
 
 
@@ -63,11 +65,11 @@ font-family: 'Nunito', sans-serif;
 text-shadow: 0 0 4px #fff,
 0 0 1px #fff,
 0 0 5px #fff,
-0 0 10px #fad567,
-0 0 25px #fad567,
+0 0 10px #fad567;
+/* 0 0 25px #fad567,
 0 0 30px #fad567,
 0 0 40px #fad567,
-0 0 60px #fad567;
+0 0 60px #fad567; */
 }
 
 /* @keyframes neon {
@@ -87,3 +89,15 @@ text-shadow: 0 0 4px #fff,
     0 0 30px var(--shadow-color), 0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 70px var(--shadow-color), 0 0 100px var(--shadow-color), 0 0 200px var(--shadow-color);
   }
 }  */
+
+.coming-soon-container {
+  opacity: 0;
+  height: 0;
+  @apply transition-all duration-1000 ease-in-out;
+}
+
+
+.coming-soon-container.show {
+    height: 100vh;
+    opacity: 1;
+}
