@@ -95,6 +95,12 @@ video.addEventListener("play", () => {
     }, 6000)
 })
 
+
+video.addEventListener('durationchange', (e) => {
+    if (video.duration >= 6) {
+        document.getElementById('csc').classList += " show ";
+    }
+})
 video.play();
 
 setTimeout(() =>{
