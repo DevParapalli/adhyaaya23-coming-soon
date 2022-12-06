@@ -97,3 +97,6 @@ video.addEventListener("play", () => {
 
 video.play();
 
+setTimeout(() =>{
+    document.getElementById('csc').classList += " show ";
+}, 6000)
