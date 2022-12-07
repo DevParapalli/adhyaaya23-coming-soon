@@ -88,10 +88,11 @@ document.getElementById("email-submit-btn").addEventListener("click", submit_ema
 initializeClock(website_date);
 
 const video = document.getElementById("video");
+const container = document.getElementById('csc');
 
 video.addEventListener("play", () => {
     setTimeout(() =>{
-        document.getElementById('csc').classList += " show ";
+        container.classList += " show";
     }, 6000)
 })
 
@@ -101,7 +102,7 @@ video.addEventListener("play", () => {
 
 video.addEventListener('durationchange', (e) => {
     if (e.target.currentTime >= 6) {
-        document.getElementById('csc').classList += " show ";
+        container.classList += " show";
     }
 })
 video.play();
