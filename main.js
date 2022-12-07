@@ -1,9 +1,9 @@
 import './style.css'
 import 'iconify-icon'
-import SpaceTravel from "space-travel";
+// import SpaceTravel from "space-travel";
 
 import {initializeApp} from 'firebase/app';
-import {getFirestore, doc, updateDoc, setDoc} from 'firebase/firestore/lite';
+import {getFirestore, doc, setDoc} from 'firebase/firestore/lite';
 
 import {website_date, firebaseConfig} from './data.js';
 
