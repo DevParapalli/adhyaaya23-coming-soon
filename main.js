@@ -90,17 +90,17 @@ initializeClock(website_date);
 const video = document.getElementById("video");
 const container = document.getElementById('csc');
 
-video.addEventListener("play", () => {
-    setTimeout(() =>{
-        container.classList += " show";
-    }, 6000)
-})
+// video.addEventListener("play", () => {
+//     setTimeout(() =>{
+//         container.classList += " show";
+//     }, 6000)
+// })
 
 // setTimeout(() =>{
 //     document.getElementById('csc').classList += " show ";
 // }, 6000)
 
-video.addEventListener('durationchange', (e) => {
+video.addEventListener('timeupdate', (e) => {
     if (e.target.currentTime >= 6) {
         container.classList += " show";
     }
