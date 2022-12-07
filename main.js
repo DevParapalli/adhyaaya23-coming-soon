@@ -95,14 +95,15 @@ video.addEventListener("play", () => {
     }, 6000)
 })
 
+// setTimeout(() =>{
+//     document.getElementById('csc').classList += " show ";
+// }, 6000)
 
 video.addEventListener('durationchange', (e) => {
-    if (video.duration >= 6) {
+    if (e.target.currentTime >= 6) {
         document.getElementById('csc').classList += " show ";
     }
 })
 video.play();
 
-setTimeout(() =>{
-    document.getElementById('csc').classList += " show ";
-}, 6000)
+
