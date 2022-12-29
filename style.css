@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -12,61 +12,65 @@
   --shadow-color-light: white;
 }
 
-html,body {
-width: 100%;
-font-family: 'Nunito', sans-serif;
-    height: 100%;
-    overflow-x: hidden;
-    background: black;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    
+@font-face {
+  font-family: "revampedregular";
+  src: url("/revamped-webfont.woff2") format("woff2"),
+    url("/revamped-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  width: 100%;
+  font-family: "Nunito", sans-serif;
+  height: 100%;
+  overflow-x: hidden;
+  background: black;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 #app {
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
-  background:black;
+  background: black;
   -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 #canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #050014;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    z-index: 1;
-  }
-
-.ui-container { 
-    height:100vh;
-    /* height: 0vh; */
-    /* opacity: 0; */
-    width:100vw;
-    position: fixed;
-    z-index: 100;
-    /* bottom: 0; */
-    @apply bg-black/50 lg:bg-black/30 items-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #050014;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 1;
 }
 
+.ui-container {
+  height: 100vh;
+  /* height: 0vh; */
+  /* opacity: 0; */
+  width: 100vw;
+  position: fixed;
+  z-index: 100;
+  /* bottom: 0; */
+  @apply bg-black/50 lg:bg-black/30 items-end;
+}
 
 .glow-text {
-/* animation: neon 3s infinite; */
-text-shadow: 0 0 4px #fff,
-0 0 1px #fff,
-0 0 5px #fff,
-0 0 10px #fad567;
-/* 0 0 25px #fad567,
+  /* animation: neon 3s infinite; */
+  text-shadow: 0 0 4px #fff, 0 0 1px #fff, 0 0 5px #fff, 0 0 10px #fad567;
+  /* 0 0 25px #fad567,
 0 0 30px #fad567,
 0 0 40px #fad567,
 0 0 60px #fad567; */
@@ -96,8 +100,11 @@ text-shadow: 0 0 4px #fff,
   @apply transition-all duration-1000 ease-in-out;
 }
 
-
 .coming-soon-container.show {
-    height: 100vh;
-    opacity: 1;
+  height: 100vh;
+  opacity: 1;
+}
+
+.cooliofont {
+  font-family: "revampedregular", 'Nunito', sans-serif;
 }

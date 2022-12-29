@@ -96,15 +96,26 @@ const container = document.getElementById('csc');
 //     }, 6000)
 // })
 
-// setTimeout(() =>{
-//     document.getElementById('csc').classList += " show ";
-// }, 6000)
+setTimeout(() =>{
+    document.getElementById('csc').classList += " show ";
+}, 1000)
 
-video.addEventListener('timeupdate', (e) => {
-    if (e.target.currentTime >= 6) {
-        container.classList += " show";
-    }
-})
-video.play();
+
+VANTA.RINGS({
+    el: "#app",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00
+  })
+// video.addEventListener('timeupdate', (e) => {
+//     if (e.target.currentTime >= 6) {
+//         container.classList += " show";
+//     }
+// })
+// video.play();
 
 
