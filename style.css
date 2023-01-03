@@ -69,11 +69,12 @@ body {
 
 .glow-text {
   /* animation: neon 3s infinite; */
-  text-shadow: 0 0 4px #fff, 0 0 1px #fff, 0 0 5px #fff, 0 0 10px #fad567;
+  text-shadow: 0 0 4px #e1ad1a, 0 0 1px #e1ad1a, 0 0 5px #e1ad1a, 0 0 10px #e1ad1a;
   /* 0 0 25px #fad567,
 0 0 30px #fad567,
 0 0 40px #fad567,
 0 0 60px #fad567; */
+color: white;
 }
 
 /* @keyframes neon {
