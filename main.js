@@ -2,10 +2,10 @@ import './style.css'
 import 'iconify-icon'
 // import SpaceTravel from "space-travel";
 
-import {initializeApp} from 'firebase/app';
-import {getFirestore, doc, setDoc} from 'firebase/firestore/lite';
+import { initializeApp } from 'firebase/app';
+import { getFirestore, doc, setDoc } from 'firebase/firestore/lite';
 
-import {website_date, firebaseConfig} from './data.js';
+import { website_date, firebaseConfig } from './data.js';
 
 function set_loading() {
     document.getElementById("email-input").disabled = true;
@@ -41,46 +41,46 @@ async function submit_email() {
     const db = getFirestore(app);
     const docRef = doc(db, `email/${email}`);
     const docRef2 = doc(db, `emails/${email}`);
-    await setDoc(docRef, {notify:true});
-    await setDoc(docRef2, {notify:true});
+    await setDoc(docRef, { notify: true });
+    await setDoc(docRef2, { notify: true });
     set_submitted();
 }
 
 
-function getTimeRemaining(endtime){
+function getTimeRemaining(endtime) {
     const total = Date.parse(endtime) - Date.parse(new Date());
-    const seconds = Math.floor( (total/1000) % 60 );
-    const minutes = Math.floor( (total/1000/60) % 60 );
-    const hours = Math.floor( (total/(1000*60*60)) % 24 );
-    const days = Math.floor( total/(1000*60*60*24) );
-    const weeks = Math.floor( total/(1000*60*60*24*7) );
+    const seconds = Math.floor((total / 1000) % 60);
+    const minutes = Math.floor((total / 1000 / 60) % 60);
+    const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+    const days = Math.floor(total / (1000 * 60 * 60 * 24));
+    const weeks = Math.floor(total / (1000 * 60 * 60 * 24 * 7));
     return {
-      total,
-      weeks,
-      days,
-      hours,
-      minutes,
-      seconds
+        total,
+        weeks,
+        days,
+        hours,
+        minutes,
+        seconds
     };
-  }
+}
 
 
-function initializeClock(endtime){
+function initializeClock(endtime) {
     const count_weeks = document.getElementById("weeks");
     const count_days = document.getElementById("days");
     const count_hours = document.getElementById("hours");
 
-    function updateClock(){
+    function updateClock() {
         const t = getTimeRemaining(endtime);
         count_weeks.innerHTML = t.weeks;
-        count_days.innerHTML = t.days - t.weeks*7;
+        count_days.innerHTML = t.days - t.weeks * 7;
         count_hours.innerHTML = t.hours;
-        if(t.total<=0){
+        if (t.total <= 0) {
             clearInterval(timeinterval);
         }
     }
     updateClock();
-    const timeinterval = setInterval(updateClock,1000);
+    const timeinterval = setInterval(updateClock, 1000);
 }
 
 document.getElementById("email-submit-btn").addEventListener("click", submit_email);
@@ -89,33 +89,44 @@ initializeClock(website_date);
 
 const video = document.getElementById("video");
 const container = document.getElementById('csc');
-
 // video.addEventListener("play", () => {
 //     setTimeout(() =>{
 //         container.classList += " show";
 //     }, 6000)
 // })
 
-setTimeout(() =>{
-    document.getElementById('csc').classList += " show ";
-}, 1000)
+// setTimeout(() =>{
+//     document.getElementById('csc').classList += " show ";
+// }, 1000)
 
 
-VANTA.RINGS({
-    el: "#app",
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    minHeight: 200.00,
-    minWidth: 200.00,
-    scale: 1.00,
-    scaleMobile: 1.00
-  })
-// video.addEventListener('timeupdate', (e) => {
-//     if (e.target.currentTime >= 6) {
-//         container.classList += " show";
-//     }
-// })
-// video.play();
+// VANTA.RINGS({
+//     el: "#app",
+//     mouseControls: true,
+//     touchControls: true,
+//     gyroControls: false,
+//     minHeight: 200.00,
+//     minWidth: 200.00,
+//     scale: 1.00,
+//     scaleMobile: 1.00
+//   })
+
+
+
+video.addEventListener('timeupdate', (e) => {
+    if (video.currentTime > 1) {
+        container.classList.add("show");
+    }
+})
+video.addEventListener('play', () => {
+    // video.classList.remove("scale-[4]");
+    // console.log(video.classList);
+    // video.classList.add("scale-100");
+    // video.style.setProperty("--tw-scale-x", "1");
+    // video.style.setProperty("--tw-scale-y", "1");
+    video.playbackRate =0.5;
+})
+
+video.play();
 
 
