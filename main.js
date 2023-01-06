@@ -89,6 +89,7 @@ initializeClock(website_date);
 
 const video = document.getElementById("video");
 const container = document.getElementById('csc');
+const bg = document.getElementById('bg-img');
 // video.addEventListener("play", () => {
 //     setTimeout(() =>{
 //         container.classList += " show";
@@ -113,25 +114,33 @@ const container = document.getElementById('csc');
 
 
 
-video.addEventListener('timeupdate', (e) => {
-    if (video.currentTime > 0.7) {
+// video.addEventListener('timeupdate', (e) => {
+//     if (video.currentTime > 0.7) {
+//         container.classList.add("show");
+//     }
+// })
+// video.addEventListener('play', () => {
+//     // video.classList.remove("scale-[4]");
+//     // console.log(video.classList);
+//     // video.classList.add("scale-100");
+//     // video.playbackRate =1;
+//     video.style.setProperty("--tw-scale-x", "1");
+//     video.style.setProperty("--tw-scale-y", "1");
+//     setTimeout(() => 
+//     {
+
+//     })
+// })
+
+setTimeout(() => {
+    bg.style.setProperty("--tw-scale-x", "1");
+    bg.style.setProperty("--tw-scale-y", "1");
+    // bg.style.setProperty("--tw-rotate", "0deg");
+    bg.style.setProperty("--tw-opacity", "1");
+    setTimeout(() => {
         container.classList.add("show");
-    }
-})
-video.addEventListener('play', () => {
-    // video.classList.remove("scale-[4]");
-    // console.log(video.classList);
-    // video.classList.add("scale-100");
-    video.playbackRate =1;
-    video.style.setProperty("--tw-scale-x", "1");
-    video.style.setProperty("--tw-scale-y", "1");
-    setTimeout(() => 
-    {
-
-    })
-})
-
-
-video.play();
+    }, 900)
+}, 500)
+// video.play();
 
 

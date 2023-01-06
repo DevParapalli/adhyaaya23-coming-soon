@@ -7,13 +7,14 @@
     <title>Adhyaaya'23 Coming Soon</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.rings.min.js"></script>
-    <link rel="prefetch" href="/intro-animation.mp4" />
+    <link rel="prefetch" href="/background.png" />
     <style>
-      video {
+      #bg-img {
         transform: translate(var(--tw-translate-x), var(--tw-translate-y))
           rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
           skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
           scaleY(var(--tw-scale-y));
+        opacity: var(--tw-opacity);
       }
     </style>
   </head>
@@ -21,14 +22,17 @@
     <div id="app">
       <!-- <div class="nav"></div> -->
       <!-- <canvas id="vanta-canvas" class="w-screen h-screen absolute"></canvas> -->
-      <video
+      <!-- <video
         loop
         muted
         id="video"
         src="/intro-2.mp4"
         class="w-screen h-screen fixed object-cover transition-all duration-1000"
         style="--tw-translate-x: 0%; --tw-translate-y: 0%; --tw-rotate: 0deg; --tw-skew-x: 0deg; --tw-skew-y: 0deg; --tw-scale-x: 2; --tw-scale-y: 2;"
-      ></video>
+      ></video> -->
+      <img id="bg-img" src="/background.png" alt="background" class="w-screen h-screen fixed object-cover transition-all duration-1000"
+        style="--tw-translate-x: 0%; --tw-translate-y: 0%; --tw-rotate: 0deg; --tw-skew-x: 0deg; --tw-skew-y: 0deg; --tw-scale-x: 100; --tw-scale-y: 100; --tw-opacity: 0;"
+        >
       <div class="ui-container xl:flex xl:flex-row">
         <div
           id="csc"
