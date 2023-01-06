@@ -1,6 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@fontsource/hubballi': ^4.5.7
+  '@fontsource/quicksand': ^4.5.11
   autoprefixer: ^10.4.13
   firebase: ^9.14.0
   iconify-icon: ^1.0.1
@@ -10,6 +12,8 @@ specifiers:
   vite: ^3.2.0
 
 dependencies:
+  '@fontsource/hubballi': 4.5.7
+  '@fontsource/quicksand': 4.5.11
   firebase: 9.14.0
   iconify-icon: 1.0.1
   space-travel: 1.0.6
@@ -505,6 +509,14 @@ packages:
 
   /@firebase/webchannel-wrapper/0.8.1:
     resolution: {integrity: sha512-CJW8vxt6bJaBeco2VnlJjmCmAkrrtIdf0GGKvpAB4J5gw8Gi0rHb+qsgKp6LsyS5W6ALPLawLs7phZmw02dvLw==}
+    dev: false
+
+  /@fontsource/hubballi/4.5.7:
+    resolution: {integrity: sha512-VbmSl8cWeiJxBFXuUYYVybUmiF8wiRrP6QCQ4jnfXlb/eaHIlnDaqrdvqLOy7nFm3Qq0IrMcLezLXvkJGkMNrQ==}
+    dev: false
+
+  /@fontsource/quicksand/4.5.11:
+    resolution: {integrity: sha512-SdgbixomUPBMjv+QZH72XsyJMY/P/XzEEFl7KCop+lAuBfy1fiqX+RyMheHhdNfR6Uk8MJla0iyb1ngcJXD0gw==}
     dev: false
 
   /@grpc/grpc-js/1.7.3:
