@@ -136,17 +136,17 @@ const bg_f = document.getElementById('bg-img-f');
 //     })
 // })
 
-setTimeout(() => {
-    bg.style.setProperty("--tw-scale-x", "1");
-    bg.style.setProperty("--tw-scale-y", "1");
-    // bg.style.setProperty("--tw-rotate", "0deg");
-    bg.style.setProperty("--tw-opacity", "1");
-    setTimeout(() => {
-        container.classList.add("show");
-        // display the new bg and start rotating it
+// setTimeout(() => {
+//     bg.style.setProperty("--tw-scale-x", "1.1");
+//     bg.style.setProperty("--tw-scale-y", "1.1");
+//     // bg.style.setProperty("--tw-rotate", "0deg");
+//     bg.style.setProperty("--tw-opacity", "1");
+//     setTimeout(() => {
+//         container.classList.add("show");
+//         // display the new bg and start rotating it
         
-    }, 1000)
-},0)
+//     }, 1000)
+// },0)
 // video.play();
 
 function animate(time=1) {
@@ -155,34 +155,59 @@ function animate(time=1) {
 }
 requestAnimationFrame(animate);
 
-const anim = {rotate: 0, opacity: 0};
-const tweenA = new TWEEN.Tween(anim)
-.to({rotate: 180}, 5000)
+const anim = {rotate: 0, opacity: 0, scale: 1, scalebg: 100};
+const rotate180 = new TWEEN.Tween(anim)
+.to({rotate: 180, scalebg: 1}, 20000)
 // .easing(TWEEN.Easing.Quadratic.In)
 .onUpdate(() => {
     bg_f.style.setProperty("--tw-rotate", `${anim.rotate}deg`);
+    bg.style.setProperty("--tw-scale-x", `${anim.scalebg}`);
+    bg.style.setProperty("--tw-scale-y", `${anim.scalebg}`);
 })
 
 
-const tweenB = new TWEEN.Tween(anim)
-.to({rotate: 360}, 5000)
+const rotate360 = new TWEEN.Tween(anim)
+.to({rotate: 360, scalebg: 1.1}, 20000)
 .onUpdate(() => {
     bg_f.style.setProperty("--tw-rotate", `${anim.rotate}deg`);
+    bg.style.setProperty("--tw-scale-x", `${anim.scalebg}`);
+    bg.style.setProperty("--tw-scale-y", `${anim.scalebg}`);
 }
 );
 // .start();
 
-const tweenC = new TWEEN.Tween(anim)
-.to({opacity: 1}, 300)
-.delay(1000)
+const fadein = new TWEEN.Tween(anim)
+.to({opacity: 1, scale: 1.1, scalebg: 1.1}, 1000)
+// .delay(1000)
 .onUpdate(() => {
+    // bg_f.style.setProperty("--tw-opacity", `${anim.opacity}`);
+    bg_f.style.setProperty("--tw-scale-x", `${anim.scale}`);
+    bg_f.style.setProperty("--tw-scale-y", `${anim.scale}`);
+    // bg.style.setProperty("--tw-opacity", `${1 - anim.opacity}`);
+    bg.style.setProperty("--tw-scale-x", `${anim.scalebg}`);
+    bg.style.setProperty("--tw-scale-y", `${anim.scalebg}`);
+})
+.onComplete(() => {
     bg_f.style.setProperty("--tw-opacity", `${anim.opacity}`);
+})
+
+const load = new TWEEN.Tween(anim)
+.to({scale: 1.1, scalebg: 1.1}, 1000)
+.onUpdate(() => {
+    bg_f.style.setProperty("--tw-scale-x", `${anim.scale}`);
+    bg_f.style.setProperty("--tw-scale-y", `${anim.scale}`);
+    bg.style.setProperty("--tw-scale-x", `${anim.scalebg}`);
+    bg.style.setProperty("--tw-scale-y", `${anim.scalebg}`);
+})
+.onComplete(() => {
+    container.classList.add("show");
 })
 
 
 
-tweenC.chain(tweenA);
-tweenA.chain(tweenB);
-tweenB.chain(tweenA);
+load.chain(fadein);
+fadein.chain(rotate180);
+rotate180.chain(rotate360);
+rotate360.chain(rotate180);
 
-tweenC.start();
+load.start();
