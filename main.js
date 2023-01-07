@@ -192,7 +192,8 @@ const fadein = new TWEEN.Tween(anim)
 })
 
 const load = new TWEEN.Tween(anim)
-.to({scale: 1.1, scalebg: 1.1}, 1000)
+.to({scale: 1.1, scalebg: 1.1}, 2000)
+.easing(TWEEN.Easing.Quadratic.InOut)
 .onUpdate(() => {
     bg_f.style.setProperty("--tw-scale-x", `${anim.scale}`);
     bg_f.style.setProperty("--tw-scale-y", `${anim.scale}`);
