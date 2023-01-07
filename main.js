@@ -88,7 +88,7 @@ document.getElementById("email-submit-btn").addEventListener("click", submit_ema
 
 initializeClock(website_date);
 
-const video = document.getElementById("video");
+// const video = document.getElementById("video");
 const container = document.getElementById('csc');
 const bg = document.getElementById('bg-img');
 const bg_f = document.getElementById('bg-img-f');
