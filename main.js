@@ -1,5 +1,6 @@
 import './style.css'
 import 'iconify-icon'
+import TWEEN from "@tweenjs/tween.js"
 // import SpaceTravel from "space-travel";
 
 import { initializeApp } from 'firebase/app';
@@ -90,6 +91,9 @@ initializeClock(website_date);
 const video = document.getElementById("video");
 const container = document.getElementById('csc');
 const bg = document.getElementById('bg-img');
+const bg_f = document.getElementById('bg-img-f');
+
+
 // video.addEventListener("play", () => {
 //     setTimeout(() =>{
 //         container.classList += " show";
@@ -139,8 +143,46 @@ setTimeout(() => {
     bg.style.setProperty("--tw-opacity", "1");
     setTimeout(() => {
         container.classList.add("show");
-    }, 900)
-}, 500)
+        // display the new bg and start rotating it
+        
+    }, 1000)
+},0)
 // video.play();
 
+function animate(time=1) {
+    requestAnimationFrame(animate);
+    TWEEN.update(time);
+}
+requestAnimationFrame(animate);
 
+const anim = {rotate: 0, opacity: 0};
+const tweenA = new TWEEN.Tween(anim)
+.to({rotate: 180}, 5000)
+// .easing(TWEEN.Easing.Quadratic.In)
+.onUpdate(() => {
+    bg_f.style.setProperty("--tw-rotate", `${anim.rotate}deg`);
+})
+
+
+const tweenB = new TWEEN.Tween(anim)
+.to({rotate: 360}, 5000)
+.onUpdate(() => {
+    bg_f.style.setProperty("--tw-rotate", `${anim.rotate}deg`);
+}
+);
+// .start();
+
+const tweenC = new TWEEN.Tween(anim)
+.to({opacity: 1}, 300)
+.delay(1000)
+.onUpdate(() => {
+    bg_f.style.setProperty("--tw-opacity", `${anim.opacity}`);
+})
+
+
+
+tweenC.chain(tweenA);
+tweenA.chain(tweenB);
+tweenB.chain(tweenA);
+
+tweenC.start();

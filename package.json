@@ -17,6 +17,7 @@
   "dependencies": {
     "@fontsource/hubballi": "^4.5.7",
     "@fontsource/quicksand": "^4.5.11",
+    "@tweenjs/tween.js": "18",
     "firebase": "^9.14.0",
     "iconify-icon": "^1.0.1",
     "space-travel": "^1.0.6"
