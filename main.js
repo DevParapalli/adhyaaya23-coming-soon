@@ -189,6 +189,9 @@ const fadein = new TWEEN.Tween(anim)
 })
 .onComplete(() => {
     bg_f.style.setProperty("--tw-opacity", `${anim.opacity}`);
+    if (window.innerWidth > 768) {
+        bg.style.setProperty("--tw-opacity", `0`);
+    }
 })
 
 const load = new TWEEN.Tween(anim)
