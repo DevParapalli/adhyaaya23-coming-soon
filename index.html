@@ -53,7 +53,7 @@
       <div class="ui-container xl:flex xl:flex-row items-center justify-center">
         <div
           id="csc"
-          class=" coming-soon-container text-white flex flex-col items-center h-full justify-evenly py-10 bg-white/10 rounded-lg"
+          class=" coming-soon-container text-white flex flex-col items-center h-full justify-evenly py-10 bg-white/10 md:bg-transparent rounded-lg"
         >
           <div class="logo  w-full flex flex-col items-center">
             <img
@@ -165,13 +165,6 @@
 <style lang="postcss">
   #csc {
      backdrop-filter: blur(3px);
-    @apply border-2 border-white/20
+    @apply border-2 md:border-none border-white/20 w-fit
   }
-
-  @media (min-width: 768px) {
-    #csc {
-      width: 30%;
-    }
-}
-
 </style>

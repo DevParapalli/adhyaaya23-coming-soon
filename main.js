@@ -155,7 +155,7 @@ function animate(time=1) {
 }
 requestAnimationFrame(animate);
 
-const anim = {rotate: 0, opacity: 0, scale: 1, scalebg: 100};
+const anim = {rotate: 0, opacity: 0, scale: 1, scalebg: 100, f_x: 0, f_y: 0, c_x: 0, c_y: 0};
 const rotate180 = new TWEEN.Tween(anim)
 .to({rotate: 180, scalebg: 1}, 20000)
 // .easing(TWEEN.Easing.Quadratic.In)
@@ -208,9 +208,18 @@ const load = new TWEEN.Tween(anim)
 })
 
 
-
+const move = new TWEEN.Tween(anim)
+.to({f_x: -25, f_y: 0, b_x: 0, b_y: 0}, 1000)
+.onStart(()=> {
+    container.style.setProperty("transform", `translate(100%, 0%)`)
+})
+.onUpdate(() => {
+    bg_f.style.setProperty("--tw-translate-x", `${anim.f_x}%`);
+    bg_f.style.setProperty("--tw-translate-y", `${anim.f_y}%`);
+})
 load.chain(fadein);
-fadein.chain(rotate180);
+if (window.innerWidth < 600)    fadein.chain(rotate180);
+else {fadein.chain(move);move.chain(rotate180)};
 rotate180.chain(rotate360);
 rotate360.chain(rotate180);
 
