@@ -92,7 +92,7 @@ initializeClock(website_date);
 const container = document.getElementById('csc');
 const bg = document.getElementById('bg-img');
 const bg_f = document.getElementById('bg-img-f');
-
+const bg_text = document.getElementById('bg-img-f-text');
 
 // video.addEventListener("play", () => {
 //     setTimeout(() =>{
@@ -155,7 +155,7 @@ function animate(time=1) {
 }
 requestAnimationFrame(animate);
 
-const anim = {rotate: 0, opacity: 0, scale: 1, scalebg: 100, f_x: 0, f_y: 0, c_x: 0, c_y: 0};
+const anim = {rotate: 0, opacity: 0, scale: 1, scalebg: 5, f_x: 0, f_y: 0, c_x: 0, c_y: 0};
 const rotate180 = new TWEEN.Tween(anim)
 .to({rotate: 180, scalebg: 1}, 20000)
 // .easing(TWEEN.Easing.Quadratic.In)
@@ -216,6 +216,10 @@ const move = new TWEEN.Tween(anim)
 .onUpdate(() => {
     bg_f.style.setProperty("--tw-translate-x", `${anim.f_x}%`);
     bg_f.style.setProperty("--tw-translate-y", `${anim.f_y}%`);
+    bg_text.style.setProperty("--tw-translate-x", `${anim.f_x}%`);
+    bg_text.style.setProperty("--tw-translate-y", `${anim.f_y}%`);
+    bg_text.style.setProperty("--tw-opacity", `${anim.opacity}`);
+
 })
 load.chain(fadein);
 if (window.innerWidth < 600)    fadein.chain(rotate180);
