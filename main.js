@@ -189,7 +189,7 @@ const fadein = new TWEEN.Tween(anim)
 })
 .onComplete(() => {
     bg_f.style.setProperty("--tw-opacity", `${anim.opacity}`);
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 1280) {
         bg.style.setProperty("--tw-opacity", `0`);
     }
 })
@@ -222,7 +222,7 @@ const move = new TWEEN.Tween(anim)
 
 })
 load.chain(fadein);
-if (window.innerWidth < 600)    fadein.chain(rotate180);
+if (window.innerWidth < 1280)    fadein.chain(rotate180);
 else {fadein.chain(move);move.chain(rotate180)};
 rotate180.chain(rotate360);
 rotate360.chain(rotate180);
