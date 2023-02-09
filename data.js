@@ -1,4 +1,4 @@
-export const website_date = '2023-02-10 12:00';
+export const website_date = '2023-02-11 00:00';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyCXfDeNyilLzYtfuqGjnC2rIjtrsVj2yu4",
