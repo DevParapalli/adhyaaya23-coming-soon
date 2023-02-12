@@ -76,7 +76,7 @@ function initializeClock(endtime) {
         count_weeks.innerHTML = t.weeks;
         count_days.innerHTML = t.days - t.weeks * 7;
         count_hours.innerHTML = t.hours;
-        if (t.total <= 0) {
+        if (t.total <= 0 && timeinterval != null) {
             clearInterval(timeinterval);
         }
     }
