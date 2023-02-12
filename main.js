@@ -73,12 +73,9 @@ function initializeClock(endtime) {
 
     function updateClock() {
         const t = getTimeRemaining(endtime);
-        count_weeks.innerHTML = t.weeks;
-        count_days.innerHTML = t.days - t.weeks * 7;
-        count_hours.innerHTML = t.hours;
-        if (t.total <= 0 && timeinterval != null) {
-            clearInterval(timeinterval);
-        }
+        count_weeks.innerHTML = Math.max(t.weeks, 0);
+        count_days.innerHTML = Math.max(t.days - t.weeks * 7, 0);
+        count_hours.innerHTML = Math.max(t.hours, 0);
     }
     updateClock();
     const timeinterval = setInterval(updateClock, 1000);
